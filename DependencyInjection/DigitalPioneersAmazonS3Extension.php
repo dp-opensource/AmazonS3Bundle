@@ -1,6 +1,6 @@
 <?php
 
-namespace DigitalPioneers\Bundle\AmazonS3Bundle\DependencyInjection;
+namespace DigitalPioneers\AmazonS3Bundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

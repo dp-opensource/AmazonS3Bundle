@@ -1,6 +1,6 @@
 <?php
 
-namespace DigitalPioneers\Bundle\AmazonS3Bundle;
+namespace DigitalPioneers\AmazonS3Bundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
