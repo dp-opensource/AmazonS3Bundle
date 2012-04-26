@@ -82,7 +82,7 @@ public function registerBundles()
 Finally, configure it:
 
 ``` yaml
-// app/config/config.yml
+# app/config/config.yml
 
 digital_pioneers_amazon_s3:
     key: %digital_pioneers_amazon_s3.key%
@@ -91,7 +91,7 @@ digital_pioneers_amazon_s3:
 ```
 
 ``` ini
-// app/config/parameters.ini
+; app/config/parameters.ini
 
 digital_pioneers_amazon_s3.key = "<API KEY GOES HERE>"
 digital_pioneers_amazon_s3.secret = "<API SECRET GOES HERE>"
