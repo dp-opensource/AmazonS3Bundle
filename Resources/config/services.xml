@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="digital_pioneers_amazon_s3.class">AmazonS3</parameter>
+    </parameters>
+
+    <services>
+        <service id="digital_pioneers_amazon_s3.service" class="%digital_pioneers_amazon_s3.class%">
+            <argument type="collection">
+                <argument type="string" key="certificate_authority">%digital_pioneers_amazon_s3.certificate_authority%</argument>
+                <argument key="credentials">%digital_pioneers_amazon_s3.credentials%</argument>
+                <argument key="default_cache_config">%digital_pioneers_amazon_s3.default_cache_config%</argument>
+                <argument key="key">%digital_pioneers_amazon_s3.key%</argument>
+                <argument key="secret">%digital_pioneers_amazon_s3.secret%</argument>
+                <argument key="token">%digital_pioneers_amazon_s3.token%</argument>
+            </argument>
+        </service>
+    </services>
+
+</container>
