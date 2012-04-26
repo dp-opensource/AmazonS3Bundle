@@ -61,7 +61,7 @@ require_once __DIR__.'/../vendor/AWS-SDK/sdk.class.php';
 
 ### Step3: Enable the bundle
 
-Finally, enable the bundle in the kernel:
+Enable the bundle in the kernel:
 
 ``` php
 <?php
@@ -77,16 +77,47 @@ public function registerBundles()
 }
 ```
 
-Congratulations! You're ready to use [Amazon Web Services SDK](/amazonwebservices/aws-sdk-for-php) into Symfony2!
+### Step4: Configure the bundle
+
+Finally, configure it:
+
+``` yaml
+// app/config/config.yml
+
+digital_pioneers_amazon_s3:
+    key: %digital_pioneers_amazon_s3.key%
+    secret: %digital_pioneers_amazon_s3.secret%
+
+```
+
+``` ini
+// app/config/parameters.ini
+
+digital_pioneers_amazon_s3.key = "<API KEY GOES HERE>"
+digital_pioneers_amazon_s3.secret = "<API SECRET GOES HERE>"
+
+```
+
+Congratulations! You're ready to use [Amazon Web Services SDK](/amazonwebservices/aws-sdk-for-php) in Symfony2!
 
 ## Basic Usage
 
-tbd
+Remember this is just a simple wrapper for the original AWS SDK, so you definetly should [read the docs](http://docs.amazonwebservices.com/AWSSDKforPHP/latest/#i=AmazonS3)
 
 ``` php
 <?php
 
-// tbd
+$s3 = $this->get('digital_pioneers_amazon_s3');
+$bucket_name = 'testbucket';
+$file_name = 'uploadtest.jpg';
+$s3->create_bucket($bucket_name, \AmazonS3::REGION_EU_W1, \AmazonS3::ACL_PUBLIC);
+$s3->batch()->create_object($bucket_name, $file_name, array(
+    	'fileUpload' => '/tmp/fancyimage.jpg',
+    	'acl' => \AmazonS3::ACL_PUBLIC
+    )
+);
+$send_response = $s3->batch()->send();
+echo $s3->get_object_url($bucket_name, $file_name);
 
 ```
 
