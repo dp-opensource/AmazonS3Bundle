@@ -1,6 +1,6 @@
 <?php
 
-namespace DigitalPioneers\Bundle\AmazonS3Bundle\DependencyInjection;
+namespace DigitalPioneers\AmazonS3Bundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
