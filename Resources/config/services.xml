@@ -9,9 +9,9 @@
     </parameters>
 
     <services>
-        <service id="digital_pioneers_amazon_s3.service" class="%digital_pioneers_amazon_s3.class%">
+        <service id="digital_pioneers_amazon_s3" class="%digital_pioneers_amazon_s3.class%">
             <argument type="collection">
-                <argument type="string" key="certificate_authority">%digital_pioneers_amazon_s3.certificate_authority%</argument>
+                <argument key="certificate_authority">%digital_pioneers_amazon_s3.certificate_authority%</argument>
                 <argument key="credentials">%digital_pioneers_amazon_s3.credentials%</argument>
                 <argument key="default_cache_config">%digital_pioneers_amazon_s3.default_cache_config%</argument>
                 <argument key="key">%digital_pioneers_amazon_s3.key%</argument>
